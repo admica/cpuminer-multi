@@ -160,6 +160,8 @@ Donations
 Donations for the work done in this fork are accepted :
 
 Admica :
+* ETH: `0x35d413d2456c8f3725d4c7c5ae83ebedc08ff0b2`
+* LTC: `LSUVPNn2ZopcaohLgPptfXUwkVbbjNUhLV`
 * XMR: `42bnVxoibyRPgPtXszTBNwK7rtSLnpJ8n8AnskymymYJdspAoMC4jsSDnjfeuJ842Fj1SJAAcMhMDXNWcWoJjD6SQuJ2Nvo`
 
 Credits
