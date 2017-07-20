@@ -2402,9 +2402,6 @@ void print_hash_tests(void)
 	scrypthash(&hash[0], &buf[0], 2048);
 	printpfx("scrypt:2048", hash);
 
-	scryptjanehash(&hash[0], &buf[0], 9);
-	printpfx("scrypt-jane", hash);
-
 	inkhash(&hash[0], &buf[0]);
 	printpfx("shavite3", hash);
 

@@ -1,10 +1,10 @@
 CPUMiner-Multi
 ==============
 
-[![Build Status](https://travis-ci.org/tpruvot/cpuminer-multi.svg)](https://travis-ci.org/tpruvot/cpuminer-multi)
+[![Build Status](https://travis-ci.org/admica/cpuminer-multi.svg)](https://travis-ci.org/admica/cpuminer-multi)
 
 This is a multi-threaded CPU miner,
-fork of [pooler](//github.com/pooler)'s cpuminer (see AUTHORS for list of contributors).
+fork of [tpruvot](//github.com/tpruvot)'s cpuminer-multi
 
 #### Table of contents
 
@@ -22,7 +22,6 @@ Algorithms
 #### Currently supported
  * ✓ __scrypt__ (Litecoin, Dogecoin, Feathercoin, ...)
  * ✓ __scrypt:N__
- * ✓ __scrypt-jane:N__
  * ✓ __sha256d__ (Bitcoin, Freicoin, Peercoin/PPCoin, Terracoin, ...)
  * ✓ __axiom__ (Axiom Shabal-256 based MemoHash)
  * ✓ __bastion__ (Joincoin [J])
@@ -66,15 +65,6 @@ Algorithms
  * ✓ __yescrypt__ (GlobalBoostY [BSTY], Unitus [UIS], MyriadCoin [MYR])
  * ✓ __zr5__ (Ziftrcoin [ZRC])
 
-#### Implemented, but untested
- * ? hefty1 (Heavycoin)
- * ? keccak (Maxcoin  HelixCoin, CryptoMeth, Galleon, 365coin, Slothcoin, BitcointalkCoin)
- * ? luffa (Joincoin, Doomcoin)
- * ? shavite3 (INKcoin)
-
-#### Planned support for
- * *scrypt-jane* (YaCoin, CopperBars, Pennies, Tickets, etc..)
- 
 Dependencies
 ============
  * libcurl http://curl.haxx.se/libcurl/
@@ -85,14 +75,13 @@ Dependencies
 
 Download
 ========
- * Windows releases: https://github.com/tpruvot/cpuminer-multi/releases
- * Git tree:   https://github.com/tpruvot/cpuminer-multi
-   * Clone with `git clone https://github.com/tpruvot/cpuminer-multi`
+ * Git tree:   https://github.com/admica/cpuminer-multi
+   * Clone with `git clone https://github.com/admica/cpuminer-multi`
 
 Build
 =====
 
-#### Basic *nix build instructions:
+#### Basic Linux build instructions:
  * just use `./build.sh`
 _OR_
 
@@ -101,7 +90,10 @@ _OR_
  ./nomacro.pl	# only needed if building on Mac OS X or with Clang
  ./configure CFLAGS="*-march=native*" --with-crypto --with-curl
  # Use -march=native if building for a single machine
- make
+
+ * Raspberry Pi 2/3, Banana Pi, or any ARMv7 or better:
+./configure CFLAGS="-O3 -march=native -mcpu=native -mtune=native -funroll-all-loops -ftree-vectorize -fassociative-math -funsafe-loop-optimizations -funsafe-math-optimizations -mfpu=neon -mfloat-abi=hard" --with-crypto --with-curl
+ make -j4
 ```
 
 #### Note for Debian/Ubuntu users:
@@ -167,19 +159,13 @@ Donations
 =========
 Donations for the work done in this fork are accepted :
 
-Tanguy Pruvot :
-* BTC: `1FhDPLPpw18X4srecguG3MxJYe4a1JsZnd`
-* ZRC: `ZX6LmrCwphNgitxvDnf8TX6Tsegfxpeozx`
-
-Lucas Jones :
-* MRO: `472haywQKoxFzf7asaQ4XKBc2foAY4ezk8HiN63ifW4iAbJiLnfmJfhHSR9XmVKw2WYPnszJV9MEHj9Z5WMK9VCNHaGLDmJ`
-* BTC: `139QWoktddChHsZMWZFxmBva4FM96X2dhE`
+Admica :
+* XMR: `42bnVxoibyRPgPtXszTBNwK7rtSLnpJ8n8AnskymymYJdspAoMC4jsSDnjfeuJ842Fj1SJAAcMhMDXNWcWoJjD6SQuJ2Nvo`
 
 Credits
 =======
-CPUMiner-multi was forked from pooler's CPUMiner, and has been started by Lucas Jones.
-* [tpruvot](https://github.com/tpruvot) added all the recent features and newer algorythmns
-* [Wolf9466](https://github.com/wolf9466) helped with Intel AES-NI support for CryptoNight
+CPUMiner-multi was originally forked from pooler's CPUMiner, and has been started by Lucas Jones.
+* [tpruvot](https://github.com/tpruvot) start here for a bigger list of credits.
 
 License
 =======
